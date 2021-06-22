@@ -1,0 +1,38 @@
+<h1>Lista de Mecanicos <small></small></h1> 
+<hr>
+
+<div class="container">
+
+
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr   class="text-center">
+                    <th>DOCUMENTO</th>
+                    <th>NOMBRE</th>
+                    <th>CELULAR</th>
+                    <th>DIRCCION</th>
+                    <th>EMAIL</th>
+                    <th>ESTADO</th>
+                    <th>HORAS</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr  class="text-center" *ngFor="let mecanico of mecanicos">
+                    <th>{{mecanico.documento}}</th>
+                <th>{{mecanico.primer_nombre}} {{mecanico.primer_apellido}}</th>
+                <th>{{mecanico.celular}}</th>
+                <th>{{mecanico.direccion}}</th>
+                <th>{{mecanico.email}}</th>
+                <th>{{mecanico.estado}}</th>
+                <th>{{mecanico.tiempoTrabajado}}</th>
+
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+  
+
+
+</div>

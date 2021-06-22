@@ -1,0 +1,143 @@
+<div class="container">
+    <div class="card">
+        <div class="class-header">
+            <h3>Registro de mecanicos</h3>
+        </div>
+
+        <div class="card-body">
+           <form autocomplete="off" (ngSubmit)="guardar(forma)" #forma="ngForm">
+
+     
+            
+            <div class="form-group">
+                <label for="">Tipo Documento:</label>
+                 <input
+                      [(ngModel)]  ="mecanico.tipo_documento"
+                     name="tipo_documento" 
+                     type="text"
+                     class="form-control "                     
+                     [class.is-invalid]="tipo_documento.invalid && tipo_documento.touched "
+                     required
+                     #tipo_documento="ngModel" 
+                    pattern="[0-9]*"
+                     maxlength="2">
+                     <small class="form-text text-danger" *ngIf= "tipo_documento.invalid && tipo_documento.touched ">*** Ingrese el Tipo Documento</small>
+            </div>
+
+            <div class="form-group">
+                <label for="">Documento:</label>
+                 <input
+                      [(ngModel)]   ="mecanico.documento"
+                     name="documento" 
+                     type="text" 
+                     class="form-control "                     
+                     [class.is-invalid]="documento.invalid && documento.touched"
+                     required
+                     #documento="ngModel"
+                     maxlength="9" >
+                     <small class="form-text text-danger"  *ngIf= "documento.invalid && documento.touched ">*** Ingrese el Tipo Documento</small>
+            </div>
+
+            <div class="form-group">
+                <label for="">Primer Nombre:</label>
+                 <input
+                      [(ngModel)]    ="mecanico.primer_nombre"
+                     name="primer_nombre" 
+                     [class.is-invalid]="primer_nombre.invalid && primer_nombre.touched"
+                     type="text" 
+                     required
+                     class="form-control "
+                     #primer_nombre="ngModel" >
+
+                     <small class="form-text text-danger" *ngIf= "primer_nombre.invalid && primer_nombre.touched " >*** Ingrese el Primer Nombre</small>
+            </div>
+
+
+
+ 
+
+               <div class="form-group">
+                <label for="">Segundo Nombre:</label>
+                    <input  
+                         [(ngModel)]  ="mecanico.segundo_nombre"
+                        name="segundo_nombre" 
+                        type="text" 
+                        class="form-control" >
+                        
+                </div>
+
+
+                <div class="form-group">
+                    <label for="">Primer Apellido:</label>
+                            <input  
+                             [(ngModel)]  ="mecanico.primer_apellido"
+                            name="primer_apellido" 
+                            [class.is-invalid]="primer_apellido.invalid && primer_apellido.touched"
+                            type="text" 
+                            required
+                            class="form-control" 
+                            #primer_apellido="ngModel">
+                            <small class="form-text text-danger" *ngIf= "primer_apellido.invalid && primer_apellido.touched ">*** Ingrese el Primer Apellido</small>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="">Segundo Apellido:</label>
+                            <input 
+                             [(ngModel)]  ="mecanico.segundo_apellido"
+                            name="segundo_apellido" 
+                            type="text" 
+                            class="form-control" >
+                            
+                </div>
+           
+                <div class="form-group">
+                    <label for="">celular:</label>
+                            <input 
+                             [(ngModel)] ="mecanico.celular"
+                            type="text"
+                            name="celular" 
+                            [class.is-invalid]="celular.invalid && celular.touched" 
+                            required
+                            class="form-control" 
+                            #celular="ngModel" 
+                            pattern="[0-9]*"
+                            maxlength="10">
+                            <small class="form-text text-danger" *ngIf= "celular.invalid && celular.touched " >*** Ingrese el numero de Celular</small>
+                </div>
+    
+                <div class="form-group">
+                    <label for="">direccion:</label>
+                            <input  
+                               [(ngModel)]   ="mecanico.direccion"
+                            required
+                            [class.is-invalid]="direccion.invalid && direccion.touched" 
+                            #direccion="ngModel"
+                            name="direccion" 
+                            type="text" 
+                            class="form-control"  >
+                            <small class="form-text text-danger" *ngIf= "direccion.invalid && direccion.touched " >*** Ingrese direccion</small>
+                </div>
+    
+                <div class="form-group">
+                    <label for="">email:</label>
+                            <input  
+                             [(ngModel)]   ="mecanico.email"
+                            [class.is-invalid]="email.invalid && email.touched" 
+                            name="email" 
+                            type="text" 
+                            required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                            class="form-control" 
+                            #email="ngModel">
+                            <small class="form-text text-danger" *ngIf= "email.invalid && email.touched " >*** Ingrese el email</small>
+                </div>
+    
+          
+<p></p>
+            <button class="btn btn-danger"  type="submit"  >Guardar</button>
+        </form>
+       
+        </div>
+    </div>
+</div>

@@ -1,0 +1,154 @@
+<div class="row mt-5" >
+<div class="col">
+    <input type="text"  #termino (keyup)="buscar(termino.value)" class="form-control" placeholder="ingresa cliente ">
+</div>
+
+</div>
+<div class="card-body" *ngIf="estado">
+    <table class="table table-hover">
+   
+           
+       
+        <tbody class="mt-5"> 
+            <th>
+                <tr   class="text-center"> <h3>CLIENTE</h3> </tr>
+                <hr>
+                <tr   class=" text-left">  PRIMER NOMBRE: <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.primer_nombre}}</small></tr>
+                <tr   class=" text">  SEGUNDO NOMBRE: <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.segundo_nombre}}</small></tr>
+                <tr   class=" text">  PRIMER APELLIDO:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.primer_apellido}}</small></tr>
+                <tr   class=" text">  SEGUNDO APELLIDO:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.segundo_apellido}}</small></tr>
+                <tr   class=" text">  TIPO DOC:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.docCliente}}</small></tr>
+                <tr   class=" text">  DOCUMENTO:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.documento}}</small></tr>
+                <tr   class=" text">  CELULAR:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.celular}}</small></tr>
+                <tr   class=" text">  DIRECCION:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.direccion}}</small></tr> 
+                <tr   class=" text">  CORREO:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.email}}</small></tr> 
+            </th>
+
+
+           
+
+            
+
+            <th>
+                <tr   class="text-center"> <h3>MECANICO</h3> </tr>
+                <hr>
+                <tr   class=" text-left">  PRIMER NOMBRE: <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.nombreMec}}</small></tr>
+                <tr   class=" text">  SEGUNDO NOMBRE: <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.nombremec2}}</small></tr>
+                <tr   class=" text">  PRIMER APELLIDO:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.apellidoMec}}</small></tr>
+                <tr   class=" text">  SEGUNDO APELLIDO:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.apellidoMec2}}</small></tr>
+                <tr   class=" text">  TIPO DOC:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.tipo_documento}}</small></tr>
+                <tr   class=" text">  DOCUMENTO:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.docMec}}</small></tr>
+                <tr   class=" text">  CELULAR:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.celMec}}</small></tr>
+                <tr   class=" text">  DIRECCION:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.dirMec}}</small></tr> 
+                <tr   class=" text">  CORREO:<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{mecanico.emailMec}}</small></tr> 
+                
+            </th>
+
+            
+           
+         
+               
+
+      
+        </tbody>
+
+    </table>
+</div>
+
+
+
+<div class="container" *ngIf="estRep">
+    <h2>REPUESTOS</h2>
+
+
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr   class="text-center">
+                    <th>REPUESTO</th>
+                    <th>VALOR_UNITARIO</th>
+                    <th>UNIDADES</th>
+                    <th>TOTAL</th>
+                    
+            </tr>
+            </thead>
+            <tbody>
+                <tr  class="text-center" *ngFor="let repuesto of repuestos" >
+                    <th>{{repuesto.nombre_repuesto  }}</th>
+                <th>{{repuesto.precio_unitario | currency }}</th>
+                <th>{{repuesto.unidades  }}</th>
+                <th>{{repuesto.precio_unitario * repuesto.unidades   | currency }}</th>
+
+
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+
+
+
+<div class="container" *ngIf="estServ">
+    <h2>SERVICIOS</h2>
+
+
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr   class="text-center">
+                    <th>SERVICIO</th>
+                    <th>VALOR</th>
+                    <th>TOTAL</th>
+                    
+            </tr>
+            </thead>
+            <tbody>
+                <tr  class="text-center" *ngFor="let servicio of servicios" >
+                    <th>{{servicio.nombre_servicio  }}</th>
+                <th>{{servicio.precio | currency }}</th>
+           
+                <th>{{servicio.precio   | currency }}</th>
+
+
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+
+
+
+
+<div class="container" *ngIf="estado">
+
+
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr   class="text-center">
+                    <th>SUBTOTAL</th>
+                    <th>DESCUENTO</th>
+                    <th>IVA</th>
+                    <th>TOTAL</th>
+                    
+            </tr>
+            </thead>
+            <tbody>
+                <tr  class="text-center" >
+                    <th>{{mecanico.subtotal | currency }}</th>
+                <th>{{mecanico.descuento | currency }}</th>
+                <th>{{mecanico.iva | currency }}</th>
+                <th>{{mecanico.total | currency }}</th>
+
+
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
